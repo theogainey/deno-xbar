@@ -1,0 +1,35 @@
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        deno-version: [1.18.2]
+
+    steps:
+      - name: checkout repository 
+        uses: actions/checkout@v2
+      - name: Use Deno Version ${{ matrix.deno-version }}
+        uses: denolib/setup-deno@v2
+        with:
+          deno-version: ${{ matrix.deno-version }}
+      - name: Format 
+        run: deno fmt README.md src --check --options-single-quote
+      - name: Lint
+        run: deno lint
+      - name: Test
+        run: deno test --allow-none
+      - name: Check Docs
+        uses: rojopolis/spellcheck-github-actions@0.17.0
+        with:
+          config_path: .github/spellcheck.yml
+          source_files: '**.md' 
+          task_name: Markdown
