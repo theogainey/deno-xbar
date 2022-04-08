@@ -1,18 +1,22 @@
-const lastLine = (lines) => lines[(lines.length) - 1];
+//array access layer
+const lastIndex = (arr) => arr.length - 1;
+const lastItem = (arr) => arr[lastIndex(arr)];
 
+//array element transform layer
+const appendLastLine = (lines, word) => [
+  ...lines.slice(0, lastIndex(lines)),
+  lastItem(lines).concat(' ', word),
+];
+const newLine = (lines, newLine) => lines.concat(newLine);
+
+//conditional logic layer
 const isUnderLimit = (line, word, lineLength) =>
   line.length + word.length + 1 <= lineLength || line === ''; //if line is empty always return true
 
-const appendLastLine = (lines, word) =>
-  lines.map((line, index) =>
-    index === lines.length - 1 ? line.concat(' ', word) : line
-  );
-
-const newLine = (lines, newLine) => lines.concat(newLine);
-
+//array reducer
 const reduceLines = (lineLength) =>
   (lines, word) => {
-    return isUnderLimit(lastLine(lines), word, lineLength)
+    return isUnderLimit(lastItem(lines), word, lineLength)
       ? appendLastLine(lines, word)
       : newLine(lines, word);
   };
