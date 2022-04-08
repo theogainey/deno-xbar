@@ -12,8 +12,12 @@ Write xbar app plugins using JavaScript and Deno
 
 ### isDarkMode
 
+Async function to query if dark mode is enabled.
+
+Type: `async () => Promise<boolean>`
+
 Will always return `false` if environment permission has not previously been
-granted`--allow-env`
+granted `--allow-env`
 
 ```
 import { isDarkMode } from "";
