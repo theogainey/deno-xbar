@@ -8,4 +8,15 @@ Write xbar app plugins using JavaScript and Deno
 
 ### Xbar
 
-## Usage
+## API
+
+### isDarkMode
+
+Will always return `false` if environment permission has not previously been
+granted`--allow-env`
+
+```
+import { isDarkMode } from "";
+
+const darkMode = await isDarkMode();
+```
