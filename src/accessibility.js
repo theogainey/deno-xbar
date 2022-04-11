@@ -43,5 +43,7 @@ export const wordWrap = (text, lineLength) => {
  */
 export const isDarkMode = async () => {
   const permissions = await Deno.permissions.query({ name: 'env' });
-  return permissions.state === 'granted' ? Deno.env.get('XBARDarkMode') : false;
+  return permissions.state === 'granted'
+    ? Deno.env.get('XBARDarkMode') === 'true'
+    : false;
 };
