@@ -59,3 +59,5 @@ Homebrew
 darkMode
 isDarkMode
 Async
+env
+usr
