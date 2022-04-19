@@ -23,7 +23,10 @@ const getFormattedOutputOptions = pipe(
 );
 
 // entry layer
-export const formatLine = (lineObj) =>
-  getSubMenuFormatting(lineObj) +
-  getFormattedText(lineObj) +
-  getFormattedOutputOptions(lineObj);
+export const formatLine = (lineObj) => {
+  const formattedLine = getSubMenuFormatting(lineObj) +
+    getFormattedText(lineObj) +
+    getFormattedOutputOptions(lineObj);
+  console.log(formattedLine);
+  return formattedLine;
+};

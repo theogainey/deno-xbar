@@ -37,7 +37,7 @@ const includeSeparator = (arr) => [
 //entry layer
 /**
  * Prints output to xbar and returns printed output as an array of strings
- * @param layout - array of menu items
+ * @param layout - array of xbar menu items
  * @returns {string[]} array of strings that were printed as menu items
  */
 export const xbar = (layout) =>
