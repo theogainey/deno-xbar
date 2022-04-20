@@ -144,7 +144,8 @@ Example:
 
 ### separator
 
-Used for declaring a separator.
+The menu items below `separator` will appear in the plugin's drop down, but will
+not appear in the menu bar itself.
 
 ### isDarkMode
 
