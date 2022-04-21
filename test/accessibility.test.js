@@ -162,3 +162,18 @@ Deno.test('wordWrap does not return an object with a `wordWrap` field if input o
     assertEquals(wordWrap(item), [expected[i]]);
   });
 });
+
+Deno.test('wordWrap does not throw error when passed objects with falsy text values' , () => {
+  const input = {
+    wordWrap: 20,
+    color: 'red',
+  };
+
+  const expected = [
+    {
+      color: 'red',
+    }
+  ]
+  const actual = wordWrap(input);
+  assertEquals(actual, expected);
+});

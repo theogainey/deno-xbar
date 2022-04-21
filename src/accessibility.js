@@ -52,12 +52,17 @@ const applyWordWrap = ({ text, wordWrap, ...menuItemProperties }) =>
 
 // entry layer conditional logic
 const hasWordWrap = (item) => !!item.wordWrap;
+const hasText = (item) => !!item.text;
+const shouldApplyWordWrap = (item) => hasWordWrap(item) && hasText(item);
+
 // deno-lint-ignore no-unused-vars
 const ignoreWordWrap = ({ wordWrap, ...item }) => item;
 
 // entry layer
 export const wordWrap = (menuItem) =>
-  hasWordWrap(menuItem) ? applyWordWrap(menuItem) : [ignoreWordWrap(menuItem)];
+  shouldApplyWordWrap(menuItem)
+    ? applyWordWrap(menuItem)
+    : [ignoreWordWrap(menuItem)];
 
 /**
  * returns true if XBARDarkMode is enabled.
