@@ -82,6 +82,8 @@ xbar([
 ]);
 ```
 
+See [examples](/examples) for more.
+
 ## API
 
 ### xbar
@@ -133,7 +135,7 @@ Example:
   text: 'Douglas Crockford',
   submenu: [
     {
-      text: `${longQuote}`
+      text: 'In JavaScript, there is a beautiful, elegant, highly expressive language that is buried under a steaming pile of good intentions and blunders.',
       wordWrap: 40,
     }
   ]
