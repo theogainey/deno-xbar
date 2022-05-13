@@ -1,5 +1,5 @@
 import { assertEquals } from 'https://deno.land/std@0.128.0/testing/asserts.ts';
-import { wordWrap } from '../src/accessibility.js';
+import { wordWrap } from '../src/accessibility.ts';
 
 Deno.test('wordWrap splits a string into an array of lines', () => {
   const input = {

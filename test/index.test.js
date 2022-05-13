@@ -2,7 +2,7 @@ import {
   assert,
   assertEquals,
 } from 'https://deno.land/std@0.128.0/testing/asserts.ts';
-import { separator, xbar } from '../src/index.js';
+import { separator, xbar } from '../src/index.ts';
 
 Deno.test('xbar returns separator as ---', () => {
   const input = [separator];

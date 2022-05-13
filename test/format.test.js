@@ -2,7 +2,7 @@ import {
   assert,
   assertEquals,
 } from 'https://deno.land/std@0.128.0/testing/asserts.ts';
-import { formatLine } from '../src/format.js';
+import { formatLine } from '../src/format.ts';
 Deno.test('formatLine returns a string', () => {
   const input = {
     text:
