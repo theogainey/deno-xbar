@@ -31,5 +31,5 @@ jobs:
         uses: rojopolis/spellcheck-github-actions@0.23.2
         with:
           config_path: .github/spellcheck.yml
-          source_files: '**.md' 
+          source_files: README.md CONTRIBUTING.md 
           task_name: Markdown
