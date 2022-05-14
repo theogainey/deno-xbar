@@ -1,9 +1,9 @@
-#!/usr/bin/env /Users/theogainey/.deno/bin/deno run --allow-net --allow-env
+#!/usr/bin/env /path/to/the/deno/executable run --allow-net --allow-env
 import {
   isDarkMode,
   separator,
   xbar,
-} from 'https://deno.land/x/xbar@v0.3.0/mod.ts';
+} from 'https://deno.land/x/xbar@v2.0.0/mod.ts';
 
 const jsonResponse = await fetch(
   'https://programming-quotes-api.herokuapp.com/quotes/random',
