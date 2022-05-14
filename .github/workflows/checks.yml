@@ -28,7 +28,7 @@ jobs:
       - name: Test
         run: deno test --allow-none
       - name: Check Docs
-        uses: rojopolis/spellcheck-github-actions@0.17.0
+        uses: rojopolis/spellcheck-github-actions@0.23.2
         with:
           config_path: .github/spellcheck.yml
           source_files: '**.md' 
