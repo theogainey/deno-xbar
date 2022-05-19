@@ -1,4 +1,4 @@
-#!/usr/bin/env /path/to/the/deno/executable run --allow-net --allow-env
+#!/usr/bin/env "${HOME}/.deno/bin/deno" run --allow-net --allow-env
 import {
   isDarkMode,
   separator,
