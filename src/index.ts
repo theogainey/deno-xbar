@@ -3,9 +3,6 @@ import { wordWrap } from './accessibility.ts';
 import { formatLine } from './format.ts';
 import { Menu, MenuItem, MenuItemWithSubMenu } from './types.d.ts';
 
-// item layer
-//const isSeparator = (item:MenuItem) => item === separator;
-
 const hasSubmenu = (item: MenuItem) => !!item.submenu;
 
 const getSubmenu = (item: MenuItemWithSubMenu) =>
@@ -30,26 +27,18 @@ const addItemWithSubmenu = (arr: string[], item: MenuItem) => [
   ...pipe(getSubmenu, xbar)(item),
 ];
 
-//const includeSeparator = (arr:MenuItem[]) => [
-// ...arr,
-// formatLine(separator),
-//];
-
 //entry layer
 /**
  * Prints output to xbar and returns printed output as an array of strings
  */
 export const xbar = (layout: MenuItem[]): string[] =>
-  layout.reduce((menuItems: string[], item) => {
-    switch (true) {
-      //   case (isSeparator(item)):
-      //    return includeSeparator(menuItems);
-      case (hasSubmenu(item)):
-        return addItemWithSubmenu(menuItems, item);
-      default:
-        return addItem(menuItems, item);
-    }
-  }, []);
+  layout.reduce(
+    (menuItems: string[], item) =>
+      hasSubmenu(item)
+        ? addItemWithSubmenu(menuItems, item)
+        : addItem(menuItems, item),
+    [],
+  );
 
 /** used for declaring a separator*/
 export const separator = {
