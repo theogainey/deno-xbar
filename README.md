@@ -40,7 +40,7 @@ In the xbar plugins directory create a file named with the following format:
 
 On the first line of that file include a shebang in the following format:
 
-`#!/usr/bin/env -S "${HOME}/.deno/bin/deno" run --allow-net run <permissions>`
+`#!/usr/bin/env -S "${HOME}/.deno/bin/deno" run <permissions>`
 
 This module can be imported to the plugin with the following code:
 
