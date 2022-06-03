@@ -40,7 +40,7 @@ In the xbar plugins directory create a file named with the following format:
 
 On the first line of that file include a shebang in the following format:
 
-`#!/usr/bin/env -S "${HOME}/.deno/bin/deno" run <permissions>`
+`#!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run <permissions>`
 
 This module can be imported to the plugin with the following code:
 
@@ -57,7 +57,7 @@ Ensure that the file is executable by using the command `chmod +x filename.js`.
 ### Example
 
 ```
-#!/usr/bin/env -S "${HOME}/.deno/bin/deno" run --allow-env
+#!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run --allow-env
 
 import { xbar, separator, isDarkMode } from "https://deno.land/x/xbar@LATEST_VERSION/mod.ts";
 
@@ -159,7 +159,7 @@ Will always return `false` if environment permission has not previously been
 granted `--allow-env`
 
 ```
-#!/usr/bin/env deno run --allow-env
+#!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run --allow-env
 import { isDarkMode } from "https://deno.land/x/xbar@LATEST_VERSION/mod.ts";
 
 const darkMode = await isDarkMode();

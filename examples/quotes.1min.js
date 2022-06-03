@@ -1,4 +1,4 @@
-#!/usr/bin/env "${HOME}/.deno/bin/deno" run --allow-net --allow-env
+#!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run --allow-net --allow-env
 import {
   isDarkMode,
   separator,

@@ -56,6 +56,7 @@ bitbar
 TypeScript
 runtime
 Homebrew
+homebrew
 darkMode
 isDarkMode
 Async

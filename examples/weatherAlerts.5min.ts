@@ -1,4 +1,4 @@
-#!/usr/bin/env "${HOME}/.deno/bin/deno" run --allow-net 
+#!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run --allow-net 
 import { separator, xbar } from 'https://deno.land/x/xbar@v2.0.0/mod.ts';
 import {
   fetchLocation,
